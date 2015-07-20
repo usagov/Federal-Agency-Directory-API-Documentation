@@ -12,7 +12,7 @@
 
 ## About the API
 
-We make the content you see in our [directory of federal agencies](/directory/federal/index.shtml) available in both English and Spanish via a REST API. The API programmatically returns all of the information contained in the directory, or you can query the API to return just a subset of the available information.
+We make the content you see in our [directory of federal agencies](https://www.usa.gov/federal-agencies/a) available in both English and Spanish via a REST API. The API programmatically returns all of the information contained in the directory, or you can query the API to return just a subset of the available information.
 
 If you are using the Federal Agency Directory API and have questions, feedback, or want to tell us about your product, please [e-mail us](mailto:usagov-developers@gsa.gov).
 
@@ -32,7 +32,7 @@ On January 28, 2014, we launched version 2.1 of the API and made the following a
 
 ## About the Data
 
-The data in the Federal Agency Directory API is based on the [English](/directory/federal/index.shtml) and [Spanish](/gobiernousa/directorios/federal/index.shtml) federal agency directories. We gather this data from the agency information listed in the [U.S. Government Manual](http://www.usgovernmentmanual.gov), and independent research by our staff.
+The data in the Federal Agency Directory API is based on the [English](https://www.usa.gov/federal-agencies/a) and [Spanish](https://gobierno.usa.gov/agencias-federales/a) federal agency directories. We gather this data from the agency information listed in the [U.S. Government Manual](http://www.usgovernmentmanual.gov), and independent research by our staff.
 
 There is no schedule for data updates; we update data continually, and as needed. Early versions of the API may have incomplete and inconsistent data. We are working to continually develop the data in our directory records.
 
@@ -48,13 +48,13 @@ This collaboration, possible through a signed agreement between the two institut
 
 Our Federal Agency Directory API is accessible via HTTP GET requests and does not require a login or API key to use.
 
-The base URL for the API is http://www.usa.gov/api/USAGovAPI/contacts.{format}/. Append the API call you’d like to make to this URL.
+The base URL for the API is https://www.usa.gov/api/USAGovAPI/contacts.{format}/. Append the API call you’d like to make to this URL.
 
 Currently, three output formats are available:
 
-1.  JSON (such as http://www.usa.gov/api/USAGovAPI/contacts.json/contacts)
-2.  XML (such as http://www.usa.gov/api/USAGovAPI/contacts.xml/contacts)
-3.  JSONP (such as http://www.usa.gov/api/USAGovAPI/contacts.jsonp/contacts?callback=callmemaybe). When requesting JSONP, you should include a callback parameter with the name of the callback function you would like called.
+1.  JSON (such as https://www.usa.gov/api/USAGovAPI/contacts.json/contacts)
+2.  XML (such as https://www.usa.gov/api/USAGovAPI/contacts.xml/contacts)
+3.  JSONP (such as https://www.usa.gov/api/USAGovAPI/contacts.jsonp/contacts?callback=callmemaybe). When requesting JSONP, you should include a callback parameter with the name of the callback function you would like called.
 
 For the purposes of this documentation, only JSON sample calls and results will be shown.
 
@@ -64,7 +64,7 @@ The Federal Agency Directory API returns results in json, with an optional callb
 
 ### Interactive Documentation for the API
 
-If you're interested in trying out the Federal Agency Directory API, we have an [interactive test page](http://www.usa.gov/About/developer-resources/federal-agency-directory/interactivedoc.shtml#!/contacts). On this page, you can try different parameters and see the results.
+The interactive documentation for the Federal Agency Directory has been discontinued as we're preparing to deprecate this API in its current form.  The content will still be available, but the format of the API will be slightly different as we launch an improved API that provides access not just to directory content, but to all of the content available on USA.gov and GobiernoUSA.gov.
 
 ### API Data Model
 
@@ -124,7 +124,7 @@ For each of these relationships, the following sub-data elements are returned fo
 
 ## API Methods
 
-As of version 2.0, the methods of the Federal Agency Directory API are broken down into two categories. The first category simply returns a list of agency records. The second category returns a hierarchical structure of the agency records, making it easy to form a tree. The tree can show that the [Food and Drug Administration](http://www.usa.gov/directory/federal/food-and-drug-administration.shtml) is part of the [Department of Health and Human Services](http://www.usa.gov/directory/federal/department-of-health-and-human-services.shtml). This is just one example.
+As of version 2.0, the methods of the Federal Agency Directory API are broken down into two categories. The first category simply returns a list of agency records. The second category returns a hierarchical structure of the agency records, making it easy to form a tree. The tree can show that the [Food and Drug Administration](https://www.usa.gov/federal-agencies/food-and-drug-administration) is part of the [Department of Health and Human Services](https://www.usa.gov/federal-agencies/u.s.-department-of-health-and-human-services). This is just one example.
 
 ### API Methods That Return A List of Agency Records
 
@@ -150,7 +150,7 @@ See the data model above for a list of field names that you can sort the results
 
 ### /contacts/tree/independent
 
-The independent method will return every agency record that has no parent and no child, such as the [National Railroad Passenger Corporation](http://www.usa.gov/directory/federal/amtrak.shtml).
+The independent method will return every agency record that has no parent and no child, such as the [National Railroad Passenger Corporation](https://www.usa.gov/federal-agencies/national-railroad-passenger-corporation).
 
 ### /contacts/tree
 
@@ -174,10 +174,10 @@ The sibling method will return all of the agency records that are siblings to th
 
 The only difference between the result format of the sibling method and the more generic contacts method is that the siblings method does not return the child and parent data elements as part of it’s results.
 
-For example, if you request the sibling agencies for the [U.S. Botanic Garden](http://www.usa.gov/directory/federal/botanic-garden.shtml) (id 49108), the API will return records for both the U.S. Botanic Garden and the [U.S. Capitol Visitor Center](http://www.usa.gov/directory/federal/us-capitol-visitor-center.shtml), as both of these agencies are part of the [Architect of the Capitol](http://www.usa.gov/directory/federal/architect-of-the-capitol.shtml).
+For example, if you request the sibling agencies for the [U.S. Botanic Garden](https://www.usa.gov/federal-agencies/u-s-botanic-garden) (id 49108), the API will return records for both the U.S. Botanic Garden and the [U.S. Capitol Visitor Center](https://www.usa.gov/federal-agencies/u.s.-capitol-visitor-center), as both of these agencies are part of the [Architect of the Capitol](https://www.usa.gov/federal-agencies/architect-of-the-capitol).
 
 If you desired the results in JSON format, the API call for this query would look like the following:
- http://www.usa.gov/api/USAGovAPI/contacts.json/contact/49108/tree/sibling
+ https://www.usa.gov/api/USAGovAPI/contacts.json/contact/49108/tree/sibling
 
 ### Sample Results For These Methods
 
@@ -413,8 +413,6 @@ If you set include_descendents to true in the tree or descendants methods, paren
 
 For a complete list of fields returned in the json, see the data model description above. Please note that any field that contains more than one item in it (such as synonyms), is returned as an array and noted in the data model description.
 
-We encourage you to try out the [interactive documentation](http://www.usa.gov/About/developer-resources/federal-agency-directory/interactivedoc.shtml#!/contacts) to learn more.
-
 ## API Methods That Return Agency Records in a Tree Form
 
 These methods return agency records in a hierarchical data structure. In this way, you do not have to manually recreate the hierarchy yourself using the contacts method.
@@ -425,11 +423,11 @@ The parent method returns the record of the parent agency specified in the REST 
 
 For example, if you request the parent tree for the Administration for Native Americans (agency id 49064) , the API will return a tree structure whose head is the U.S.  Department of Health and Human Services, with a child record for the Administration for Children and Families, which will then have a child record for the Administration of Native Americans.
 
-With JSON-formatted results, this call would be made with this URL:  http://www.usa.gov/api/USAGovAPI/contacts.json/contact/49064/tree/parent
+With JSON-formatted results, this call would be made with this URL:  https://www.usa.gov/api/USAGovAPI/contacts.json/contact/49064/tree/parent
 
 Likewise, if you request the parent tree for the Administration for Children and Families (agency id 47994), the API will return a tree structure whose head is the U.S. Department of Health and Human Services, with a child record for the Administration for Children and Families.  However, the structure will end at that point instead of continuing down the agency hierarchy.
 
-With JSON-formatted results, this call would be made with this URL:  http://www.usa.gov/api/USAGovAPI/contacts.json/contact/47994/tree/parent
+With JSON-formatted results, this call would be made with this URL:  https://www.usa.gov/api/USAGovAPI/contacts.json/contact/47994/tree/parent
 
 ### /contact/{identifier}/tree/descendant
 
@@ -437,11 +435,11 @@ The descendant method will return a tree with the agency specified in the REST U
 
 For example, if you request the descendant tree of the Administration for Children and Families (agency id 47994), the API will return a tree structure with the record for the Administration for Children and Families at it’s head. There would then be child record for the Administration of Native Americans, since that agency is a subagency of the Administration for Children and Families.
 
-With JSON-formatted results, this call would be made with this URL: http://www.usa.gov/api/USAGovAPI/contacts.json/contact/47994/tree/descendant
+With JSON-formatted results, this call would be made with this URL: https://www.usa.gov/api/USAGovAPI/contacts.json/contact/47994/tree/descendant
 
 Likewise, if you request the descendant tree of the U.S. Department of Health and Human Services (agency id 49021), the API will return a tree structure with the U.S. Department of Health and Human Services record at it’s head, and have 15 child records for each of the sub-agencies.  The tree will continue in this manner until the entire U.S. Department of Health and Human Services hierarchy of agencies is exposed.
 
-With JSON-formatted results, this call would be made with this URL: http://www.usa.gov/api/USAGovAPI/contacts.json/contact/49021/tree/descendant
+With JSON-formatted results, this call would be made with this URL: https://www.usa.gov/api/USAGovAPI/contacts.json/contact/49021/tree/descendant
 
 ### /contact/{identifier}/tree/branch
 
@@ -648,4 +646,4 @@ For API methods that return a tree of directory records, the API will return an 
 
 ## Terms of Service
 
-By using this data, you agree to the [Terms of Service](/About/developer-resources/terms-of-service.shtml).
+By using this data, you agree to the [Terms of Service](https://www.usa.gov/developer-terms-of-service).
